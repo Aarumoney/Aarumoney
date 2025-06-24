@@ -1,9 +1,6 @@
-import time
-print("✅ SnjuPatternBot is running...")
-
-# This is a placeholder for real-time crypto pattern detection
-# Connect to exchange API, detect patterns, and send Telegram alerts
-
-while True:
-    print("🔍 Scanning for patterns...")
-    time.sleep(60)
+services:
+  - type: worker
+    name: SnjuPatternBot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
